@@ -1,0 +1,25 @@
+#### linux #####
+
+#remove broken links
+sudo find -L /path/ -type l -delete
+
+#mount vbox shared folder
+sudo mount -t vboxsf D_SHARED ~/share/
+
+# remove all tabs to 4 spaces
+find ./ -type f -exec sed -i 's/\t/    /g' {} \;
+
+##### GIT #####
+
+# file list in commit 
+git diff-tree --no-commit-id --name-only -r bd61ad98
+
+#deleted in stage
+git ls-files --deleted -z | xargs -0 git rm 
+
+# reset git file change mode
+git diff -p \
+    | grep -E '^(diff|old mode|new mode)' \
+    | sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' \
+    | git apply
+
