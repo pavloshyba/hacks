@@ -29,3 +29,6 @@ git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.br branch
+
+# reset file in commit
+git checkout c5f567 -- file1/to/restore file2/to/restore
