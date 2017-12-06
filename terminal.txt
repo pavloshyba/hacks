@@ -15,6 +15,9 @@ cat <file_name> | sed 's/.*]: //'   | sort | uniq -c --check-chars=8 | sed 's/) 
 # remove all tabs to 4 spaces
 find ./ -type f -exec sed -i 's/\t/    /g' {} \;
 
+# find content
+grep -rnw '/path/to/somewhere/' -e 'pattern'
+
 ##### GIT #####
 
 # file list in commit 
