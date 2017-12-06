@@ -6,6 +6,12 @@ sudo find -L /path/ -type l -delete
 # mount vbox shared folder
 sudo mount -t vboxsf D_SHARED ~/share/
 
+# find last folder in other folder
+ls /path/to/folder/ | grep "<folder name>" | sort -V | tail -n 1
+
+# find warnings from file with compile output
+cat <file_name> | sed 's/.*]: //'   | sort | uniq -c --check-chars=8 | sed 's/) .*/)/'
+
 # remove all tabs to 4 spaces
 find ./ -type f -exec sed -i 's/\t/    /g' {} \;
 
