@@ -47,3 +47,7 @@ git status | grep deleted | awk '{print $4}'
 
 # get the submodule path itself
 git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
+
+# useful link for terminal
+https://www.ibm.com/developerworks/linux/library/l-tip-prompt/
+
